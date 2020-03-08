@@ -18,6 +18,14 @@ $primary-invert: $yellow-invert;
 
 // 4. Import the rest of Bulma
 @import "../node_modules/bulma/bulma";
+// can import only specific modules via:
+// @import "../node_modules/bulma/sass/utilities/_all"
+// @import "../node_modules/bulma/sass/base/_all"
+// @import "../node_modules/bulma/sass/elements/_all"
+// @import "../node_modules/bulma/sass/form/_all"
+// @import "../node_modules/bulma/sass/components/_all"
+// @import "../node_modules/bulma/sass/grid/_all"
+// @import "../node_modules/bulma/sass/layout/_all"
 
 .hero {
   &.has-background{

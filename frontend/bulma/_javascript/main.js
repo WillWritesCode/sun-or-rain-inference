@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   imageUpload.onchange = () => imageUploadSelected(imageUpload);
 });
 
-
 function imageUploadSelected(imageUpload) {
   var files = imageUpload.files;
   if (files.length > 0) {

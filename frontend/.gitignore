@@ -21,7 +21,7 @@ test.scss
 # Folders
 
 .sass-cache
-/bulma
+/bulma/node_modules
 /dev
 /icons
 /styles/node_modules
