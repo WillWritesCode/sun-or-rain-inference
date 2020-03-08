@@ -15,6 +15,8 @@ $family-sans-serif: "Helvetica", "Arial", sans-serif;
 // Use the new pink as the primary color
 $primary:$yellow;
 $primary-invert: $yellow-invert;
+$info: #68B0A2;
+
 
 // 4. Import the rest of Bulma
 @import "../node_modules/bulma/bulma";
@@ -29,17 +31,8 @@ $primary-invert: $yellow-invert;
 
 .hero {
   &.has-background{
-    position: relative;
-    overflow: hidden;
-  }
-  &-background{
-    position: absolute;
-    object-fit: cover;
-    object-position: center center;
-    width: 100%;
-    height: 100%;
-    &.is-transparent {
-      opacity: 0.2;
-    }
+    background-image: url('../img/undraw_weather_app_i5sm.svg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 }
