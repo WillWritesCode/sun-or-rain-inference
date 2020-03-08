@@ -4,17 +4,34 @@
 @import "../node_modules/bulma/sass/utilities/initial-variables";
 // 2. Set your own initial variables
 // Update the blue shade, used for links
-$blue: #06bcef;
-// Add pink and its invert
-$pink: #f0c53a;
-$pink-invert: #fff;
+// $blue: #06bcef;
+// Add color and its invert
+$yellow: rgb(255, 192, 19);
+$yellow-invert: #fff;
 // Update the sans-serif font family
 $family-sans-serif: "Helvetica", "Arial", sans-serif;
 
 // 3. Set the derived variables
 // Use the new pink as the primary color
-$primary:$pink;
-$primary-invert: $pink-invert;
+$primary:$yellow;
+$primary-invert: $yellow-invert;
 
 // 4. Import the rest of Bulma
 @import "../node_modules/bulma/bulma";
+
+.hero {
+  &.has-background{
+    position: relative;
+    overflow: hidden;
+  }
+  &-background{
+    position: absolute;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+    &.is-transparent {
+      opacity: 0.2;
+    }
+  }
+}
