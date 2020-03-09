@@ -1,3 +1,5 @@
+@import "../node_modules/bulma/sass/utilities/mixins";
+
 #image-upload-container {
     max-width: 600px;
     margin: auto;
@@ -9,10 +11,15 @@
     justify-content: space-between;
 }
 
-#image-upload-container .button {  
-    // margin-left: 12px;
-    width: 316px;
-    margin: auto;
+#image-upload-container .button {
+    @include from($tablet) {
+        margin-left: 12px;
+    }
+
+    @include until($tablet) {
+        width: 316px;
+        margin: auto;
+    }
 }
 
 #image-upload .file-cta {
@@ -29,6 +36,10 @@
     justify-content: center;
 }
 
+#image-upload-container .mobile-button{
+    display: flex;
+}
+
 .upload-thumbnail {
     display: block;
     opacity: 0;
@@ -40,4 +51,19 @@
 
 .show-upload-thumbnail {
     opacity: 1;
+}
+#illustrations {
+    display: flex;
+    @include until($tablet) {
+        margin-top: 5%;
+    }
+
+    @include from($tablet) {
+        margin: 0;
+    }
+}
+#illustrations img {
+    max-height: 15vw;
+    width: 25%;
+    margin:0 4%;
 }

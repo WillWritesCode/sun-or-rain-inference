@@ -6956,7 +6956,8 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
-.hero.has-background {
-  background-image: url("../img/undraw_weather_app_i5sm.svg");
-  background-attachment: fixed;
-  background-repeat: no-repeat; }
+@media screen and (min-width: 769px) {
+  .hero.has-background {
+    background-image: url("../img/undraw_weather_app_i5sm.svg");
+    background-attachment: fixed;
+    background-repeat: no-repeat; } }

@@ -30,9 +30,11 @@ $info: #68B0A2;
 // @import "../node_modules/bulma/sass/layout/_all"
 
 .hero {
-  &.has-background{
-    background-image: url('../img/undraw_weather_app_i5sm.svg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+  &.has-background {
+    @include from($tablet) {
+      background-image: url('../img/undraw_weather_app_i5sm.svg');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
   }
-}
+}  
