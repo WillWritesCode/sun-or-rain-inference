@@ -22,50 +22,55 @@
               Basic Weather Inference from Photos
             </h1>
             <h2 class="subtitle is-4">
-              Simple model based on <a href="https://www.kaggle.com/pytorch/resnet34">Resnet34</a>, trained on results from <a href="https://images.google.com/">Google Image
-              search</a>, using <a href="https://fast.ai">FastAI</a> (on top of <a href="https://pytorch.org">Pytorch</a>) with to categorise images as either <strong>Sunny</strong> or <strong>Raining</strong>.
+              Simple model based on <a href="https://www.kaggle.com/pytorch/resnet34">Resnet34</a>, trained on results
+              from <a href="https://images.google.com/">Google Image
+                search</a>, using <a href="https://fast.ai">FastAI</a> (on top of <a
+                href="https://pytorch.org">Pytorch</a>) with to categorise images as either <strong>Sunny</strong> or
+              <strong>Raining</strong>.
               <br><br>
-              <p>The backend is a <a href="https://palletsprojects.com/p/flask/">Python Flask API</a> with frontend <a href="https://bulma.io">CSS framework Bulma</a></p>
-              <p>Illustrations from <a href="https://undraw.co">Undraw</a> and <a href="https://designs.ai/graphicmaker">GraphicMaker</a> </p>
+              <p>The backend is a <a href="https://palletsprojects.com/p/flask/">Python Flask API</a> with frontend <a
+                  href="https://bulma.io">CSS framework Bulma</a></p>
+              <p>Illustrations from <a href="https://undraw.co">Undraw</a> and <a
+                  href="https://designs.ai/graphicmaker">GraphicMaker</a> </p>
             </h2>
-            <p>[Could add JS framework e.g.  Svelte/Vue/React at some point, but it's overkill at this stage].</p>
+            <p>[Could add JS framework e.g. Svelte/Vue/React at some point, but it's overkill at this stage].</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="section main" >
+  <section class="section main">
     <div class="container">
       <div class="columns">
         <div class="column is-8-desktop is-offset-2-desktop">
-          <div id="image-upload-container" class="content">
-            <h3>Upload a Photo and See How the Model Performs</h3>
-            <div id="image-upload" class="section file has-name is-primary">
-              <label class="file-label">
-                <input class="file-input" type="file" name="resume">
-                <span class="file-cta">
-                  <span class="file-icon">
-                    <i class="fas fa-upload"></i>
-                  </span>
-                  <span class="file-label">
-                    Choose a file…
-                  </span>
-                </span>
-                <span class="file-name">
-                  No file uploaded
-                </span>
-                <p class="control">
-                  <a class="button is-medium is-info" href="#">
+          <div id="image-upload-container" class="content pad2x">
+            <h3 class="content has-text-centered">Upload a Photo and See How the Model Performs</h3>
+            <div id="image-upload" class="file has-name is-primary">
+                <label class="file-label">
+                  <input class="file-input" type="file" name="resume">
+                  <span class="file-cta">
                     <span class="file-icon">
                       <i class="fas fa-upload"></i>
                     </span>
-                    <strong class="has-text-weight-semibold">Upload File</strong>
-                  </a>
-                </p>
-              </label>
+                    <span class="file-label">
+                      Choose a file…
+                    </span>
+                  </span>
+                  <span class="file-name">
+                    No file uploaded
+                  </span>
+                </label>
             </div>
-            <div class="content">
+            <div class="section">
               <img id="thumbnail" class="upload-thumbnail" alt="image-preview-here" />
+            </div>
+            <div class="" style="display:flex; align-items: center;" >
+              <a class="button is-medium is-info is-centered" href="#">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <strong class="has-text-weight-semibold">Upload File</strong>
+              </a>
             </div>
 
           </div>
@@ -73,9 +78,11 @@
         </div>
       </div>
     </div>
-    <div class="level">
-      <img alt="Rain Illustration from https://designs.ai/graphicmaker/illustration/287-raining" src="img/graphicmaker-rain.svg"  class="level-left" style="width: 45%;"/>
-      <img alt="Weather Illustration from https://undraw.co" src="img/undraw_weather_app_i5sm.svg" class="level-right" style="width: 45%; padding:220px 220px 155px" />
+    <div class="level" style="display:flex;">
+      <img alt="Rain Illustration from https://designs.ai/graphicmaker/illustration/287-raining"
+        src="img/graphicmaker-rain.svg" class="level-left" style="max-height: 15vw;width: 25%; margin:4%;" />
+      <img alt="Weather Illustration from https://undraw.co" src="img/undraw_weather_app_i5sm.svg" class="level-right"
+        style="max-height: 15vw;width: 25%; margin:4%;" />
     </div>
 
   </section>

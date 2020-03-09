@@ -12,6 +12,9 @@ Bulma CSS framework with minor customisation + illustrations.
 
 Consider using steps component to make the process clear: https://github.com/aramvisser/bulma-steps
 
+## TODO
+* fix responsive layout on 
+  * hero text/background clash at mobile scale
 
 ## Resources:
 
@@ -39,9 +42,13 @@ I chose [Flask](https://palletsprojects.com/p/flask/) as the backend as:
     * https://github.com/zeit/now/tree/master/examples
     * https://forums.fast.ai/t/puting-the-model-into-production-web-apps/29011
     * https://medium.com/@zachcaceres/deploying-a-deep-learning-image-classification-model-with-fastai-python-and-nodejs-cdc491b56368
+    * https://course.fast.ai/deployment_zeit.html
+    * https://zeit.co/docs/runtimes#official-runtimes/python
+    * https://github.com/nikhilno1/healthy-or-not/blob/master/heroku-deploy.md
 * Prepare env in PythonAnywhere (install FastAI and relevant framework(s))
   * need to tread carefully due to disk space (500MB) and web console (max output per command) limitations https://www.pythonanywhere.com/forums/topic/14196/
-  * watch put for pip cache
+    * watch put for pip cache
+  * Can't use PythonAnywhere free tier - disk limit 500MB PyTorch 1.4 > 700MB
 * add a direct URL entry/selection option for files on the web
 * Starlette 
   * https://mc.ai/fast-ai-2019-lesson-2-production-sgd-from-scratch/

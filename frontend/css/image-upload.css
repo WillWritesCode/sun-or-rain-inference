@@ -1,5 +1,5 @@
 #image-upload-container {
-  width: 600px;
+  max-width: 600px;
   margin: auto;
   justify-content: center; }
 
@@ -8,7 +8,8 @@
   justify-content: space-between; }
 
 #image-upload-container .button {
-  margin-left: 12px; }
+  width: 316px;
+  margin: auto; }
 
 #image-upload .file-cta {
   height: 100%; }
@@ -24,7 +25,7 @@
 .upload-thumbnail {
   display: block;
   opacity: 0;
-  width: 240px;
+  height: 100px;
   margin-left: auto;
   margin-right: auto;
   transition: opacity 2s; }
