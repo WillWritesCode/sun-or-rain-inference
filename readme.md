@@ -48,7 +48,19 @@ I chose [Flask](https://palletsprojects.com/p/flask/) as the backend as:
 * Prepare env in PythonAnywhere (install FastAI and relevant framework(s))
   * need to tread carefully due to disk space (500MB) and web console (max output per command) limitations https://www.pythonanywhere.com/forums/topic/14196/
     * watch put for pip cache
-  * Can't use PythonAnywhere free tier - disk limit 500MB PyTorch 1.4 > 700MB
+  * Can't use PythonAnywhere free tier - disk limit 500MB PyTorch 1.4 > 700MB tarballed
+    * even the CPU version unzips to >500MB
+    * Probably looking at a docker deployment (somewhere)
+      * https://hub.docker.com/r/ryangrahamnc/fastai-cpu
+      * https://hub.docker.com/r/gilmoreno/fastai
+      * https://hub.docker.com/r/nebfield/fastai-cpu
+      * https://hub.docker.com/r/morphles/fastai
+      * https://hub.docker.com/r/dimitrijd/fastai
+      * https://hub.docker.com/r/chrispeely/guitarid
+      * https://hub.docker.com/r/fr0zenbanana/mushroom-helper
+  * https://jobs.zalando.com/en/tech/blog/connexion-zalando-open-source/?gh_src=4n3gxh1%3Fgh_src%3D4n3gxh1
+  * https://github.com/IaroslavR/fastai-rest-server-template
+  * https://github.com/elvinx/connexion-example
 * add a direct URL entry/selection option for files on the web
 * Starlette 
   * https://mc.ai/fast-ai-2019-lesson-2-production-sgd-from-scratch/

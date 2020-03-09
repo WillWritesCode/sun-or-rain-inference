@@ -35,6 +35,21 @@ $info: #68B0A2;
       background-image: url('../img/undraw_weather_app_i5sm.svg');
       background-attachment: fixed;
       background-repeat: no-repeat;
+      background-position: top left;
     }
   }
 }  
+
+.hero-background {
+  margin:10px 10px -171px 30px;
+}
+
+.hero-body {
+  @include until($tablet) {
+    text-shadow: #bd9a00 6px 2px 15px
+  }
+
+  @include from($tablet) {
+    text-shadow: rgba(204, 152, 39, 0.6) 1px 0px 10px;
+  }
+}
