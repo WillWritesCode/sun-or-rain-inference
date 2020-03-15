@@ -30,11 +30,14 @@ Consider using steps component to make the process clear: https://github.com/ara
 
 
 # Backend
+**Not Written Yet**
 
-I chose [Flask](https://palletsprojects.com/p/flask/) as the backend as:
+I'll probably go with [Flask](https://palletsprojects.com/p/flask/) as the backend as:
 * the model is already in Python (so no coversions or bridge libraries to worry about)
 * means I can use https://www.pythonanywhere.com/ for free hosting
 * it's much lighter weight/less setup than Django & simple to work with from a static frontend
+
+Another option that I've not researched properly yet, but that simplifies packageing & deployment to varios clouds is BentoML - https://github.com/bentoml/BentoML
 
 ## TODO:
 * Confirm Flask, FastAI or Starlette as backend
@@ -75,3 +78,8 @@ I chose [Flask](https://palletsprojects.com/p/flask/) as the backend as:
 * Embedding in Notebook:
   * https://medium.com/@pierre_guillou/deep-learning-web-app-by-fastai-v1-3ab4c20b7cac
   * https://forums.fast.ai/t/puting-the-model-into-production-web-apps/29011/103
+
+
+## ML Model
+Based on the workflow used for the pet classifier in lesson2 of the FastAIv3 course.
+See: https://github.com/BestWillInTheWorld/fast.ai-course/blob/master/lesson2-download/lesson2-download.ipynb
