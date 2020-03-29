@@ -1,6 +1,6 @@
-from bentoml import load
 # 1) import the custom BentoService
 from classes.bentoml_service import SunRainClassification
+from bentoml import load
 from fastai.vision import *
 
 def pack_and_save_bento(output_path):
