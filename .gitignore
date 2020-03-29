@@ -1,1 +1,3 @@
 .vscode/settings.json
+bentoml_bundles
+__pycache__
