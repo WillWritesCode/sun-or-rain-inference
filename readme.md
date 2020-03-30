@@ -97,8 +97,9 @@ python run_bento.py
            )
       ```
     * no idea what side effects that will have, but it got me up and running - submitting an image via the Swagger test harness works!
-* [ ] `serve` by saved path `bentoml serve "inference/bento_bundles/SunRainClassification"`
+* [x] `serve` by saved path `bentoml serve "inference/bento_bundles/SunRainClassification"`
   * expects `either specify the file path of the BentoService saved bundle, or the BentoService id in the form of "name:version"`
+  * stupid typo - works with correct path `bentoml serve "inference/bentoml_bundles/SunRainClassification"`
 * [ ] Generated API endpoint requires image data, so I'll need to pull the image in in JS before pushing it to the server (probably use that as an opportunity to shrink it first)
 * [ ] Need to actually deploy it somehwere and test a live version
 
