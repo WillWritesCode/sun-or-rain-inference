@@ -44,7 +44,20 @@ I'll probably go with [Flask](https://palletsprojects.com/p/flask/) as the backe
 ## Exploring
 
 ### BentoML
-Another option that I've not researched properly yet, but that simplifies packageing & deployment to varios clouds is BentoML - https://github.com/bentoml/BentoML
+https://github.com/bentoml/BentoML
+
+BentoMl aims to simplify packaging & deployment of a pre-trained model to various clouds.  It produces API endpoints automatically based on simple patterns from their "handlers" module.
+
+Handlers are available for common inference tasks (image classifier, value predictions etc.) in most common ML frameworks.
+
+The endpoints it produces have a Swagger/OpenAPI test harness auto-generated, which is great for testing and for documenting to developers (Connexion API framework from Zalando has a similar trick on that front).
+
+It looked like a good option to shorten deployment and reduce time spent pandering to the specific needs of cloud vendors or other platforms.  I did have a fair amount of trouble getting things running - likely mostly down to version incompatibilityies/dependency specification issues & I did get it running.
+(I've found with most of these tools, they're not that mature/don't have a wide enough user-base to resillient across version changes in various dependencies or in Python itself)
+
+Deployment comes via Dockerisation (it auto-generates a Dockerfile, environment vars file, setup script etc. which could shorten time-to-deploy) and integration with a couple of cloud API's and/or some manual [deployment instructions from BentoML](https://docs.bentoml.org/en/latest/deployment/index.html).
+
+I need to decide whether the additional dependencies are worth it vs a more hand-rolled approach - should be clearer once I've deployed to a host using BentoML tooling.
 
 ```sh
 # can't use Python 3.8 with bentoml, needs at least 3.7, pytorch seems to need 3.7 still
@@ -67,6 +80,28 @@ python run_bento.py
 | ---------- | ------ |
 | rain.jog   | https://unsplash.com/photos/mODxn7mOzms |
 | sun.jpg    | https://images.unsplash.com/photo-1529923123842-3310dfdc0b10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80 |
+
+#### Issues:
+
+
+* [x] `bentoml serve SunRainClassification:latest`
+  * `AttributeError: 'zipimport.zipimporter' object has no attribute 'path'`     
+  * Workaround in `~/Applications/anaconda3/lib/python3.6/site-packages/bentoml/utils/pip_pkg.py`
+    * at line 79, enclose the "searched modules" code in an id, checking that the object has the attribute: `path` as follows:
+      ```python
+       if hasattr(m.module_finder, "path"): #this line is the workaround 
+           path = m.module_finder.path
+           is_local = self.is_local_path(path)
+           self.searched_modules[m.name] = ModuleInfo(
+               m.name, path, is_local, m.ispkg
+           )
+      ```
+    * no idea what side effects that will have, but it got me up and running - submitting an image via the Swagger test harness works!
+* [ ] `serve` by saved path `bentoml serve "inference/bento_bundles/SunRainClassification"`
+  * expects `either specify the file path of the BentoService saved bundle, or the BentoService id in the form of "name:version"`
+* [ ] Generated API endpoint requires image data, so I'll need to pull the image in in JS before pushing it to the server (probably use that as an opportunity to shrink it first)
+* [ ] Need to actually deploy it somehwere and test a live version
+
 
 
 ## Discarded Options
